@@ -4,7 +4,7 @@ on:
   pull_request:
 
 env:
-  LABEL: testing
+  LABEL: enqueue
   MISSING_LABEL: missing
 
 jobs:
