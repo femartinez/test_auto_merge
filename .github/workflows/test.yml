@@ -1,0 +1,5 @@
+steps:
+  - name: Check for present label
+    uses: egmacke/action-check-label@v1
+    with:
+      label: test
