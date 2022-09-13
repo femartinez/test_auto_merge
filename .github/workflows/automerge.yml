@@ -2,10 +2,10 @@ name: automerge
 
 env:
   GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-  MERGE_LABELS: "automerge,!deploy"
-  MERGE_REMOVE_LABELS: "automerge"
+  MERGE_LABELS: "deploy"
+  MERGE_REMOVE_LABELS: ""
   MERGE_METHOD: "squash"
-  MERGE_COMMIT_MESSAGE: "Auto merge {pullRequest.number}"
+  MERGE_COMMIT_MESSAGE: "Auto merge action PR {pullRequest.number}"
   MERGE_FORKS: "false"
   MERGE_RETRIES: "6"
   MERGE_RETRY_SLEEP: "10000"
