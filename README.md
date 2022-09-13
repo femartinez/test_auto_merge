@@ -4,4 +4,4 @@ Test auto merge branch
 
 Test B2
 
-Test b3
+Test b4
