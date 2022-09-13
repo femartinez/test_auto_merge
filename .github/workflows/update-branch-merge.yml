@@ -3,7 +3,6 @@ name: Merge base branch into PRs
 on:
   push:
     branches:
-    # Automatically merge main/master branch into PR local branch.
       - master
 
 jobs:
@@ -17,7 +16,5 @@ jobs:
       uses: deliveryhero/pr-base-auto-merger@main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        # Delay in seconds between consecutive merges
         MERGE_DELAY: 5
-        # Label of PRs for which base can be merged. Use '*' to include all open PRs.
         MERGE_LABEL: 'enqueue'
