@@ -1,3 +1,3 @@
 # test_auto_merge
 
-B1
+B2
