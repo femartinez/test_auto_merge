@@ -5,7 +5,7 @@ env:
   MERGE_LABELS: "deploy"
   MERGE_REMOVE_LABELS: ""
   MERGE_METHOD: "squash"
-  MERGE_COMMIT_MESSAGE: "Auto merge action PR {pullRequest.number}"
+  MERGE_COMMIT_MESSAGE: "Auto-merge merge PR {pullRequest.number} into master"
   MERGE_FORKS: "false"
   MERGE_RETRIES: "6"
   MERGE_RETRY_SLEEP: "10000"
