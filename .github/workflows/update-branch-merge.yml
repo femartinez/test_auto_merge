@@ -17,4 +17,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         MERGE_DELAY: 5
-        MERGE_LABEL: 'enqueue'
+        MERGE_LABEL: 'auto-base-merge'
