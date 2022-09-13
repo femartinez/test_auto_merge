@@ -3,3 +3,5 @@
 Test auto merge branch
 
 Test B2
+
+Test b3
