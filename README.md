@@ -1,4 +1,7 @@
 # test_auto_merge
 
+Test update B5
 
-B4
+Test another change
+
+Try with PR
