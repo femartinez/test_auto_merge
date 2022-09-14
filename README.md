@@ -1,3 +1,3 @@
 # test_auto_merge
 
-B5
+Test update B5
