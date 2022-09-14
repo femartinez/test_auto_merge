@@ -1,23 +1,12 @@
 name: automerge
 
-env:
-  GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-  MERGE_LABELS: "deploy"
-  MERGE_REMOVE_LABELS: ""
-  MERGE_METHOD: "squash"
-  MERGE_COMMIT_MESSAGE: "Auto-merge merge PR {pullRequest.number} into master"
-  MERGE_FORKS: "false"
-  MERGE_RETRIES: "6"
-  MERGE_RETRY_SLEEP: "10000"
-  MERGE_REQUIRED_APPROVALS: "0"
-  UPDATE_LABELS: "enqueue"
-  UPDATE_METHOD: "merge"
-  UPDATE_RETRIES: "2"
-  UPDATE_RETRY_SLEEP: "10000"
-  BASE_BRANCHES: "master"
-
 on:
+  push:
+    branches:
+      - 'master'
   pull_request:
+    branches:
+      - 'master'
     types:
       - labeled
       - unlabeled
@@ -43,3 +32,16 @@ jobs:
         uses: "pascalgn/automerge-action@v0.15.3"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_LABELS: "deploy"
+          MERGE_REMOVE_LABELS: ""
+          MERGE_METHOD: "squash"
+          MERGE_COMMIT_MESSAGE: "Auto-merge merge PR {pullRequest.number} into master"
+          MERGE_FORKS: "false"
+          MERGE_RETRIES: "6"
+          MERGE_RETRY_SLEEP: "10000"
+          MERGE_REQUIRED_APPROVALS: "0"
+          UPDATE_LABELS: "enqueue"
+          UPDATE_METHOD: "merge"
+          UPDATE_RETRIES: "2"
+          UPDATE_RETRY_SLEEP: "10000"
+          BASE_BRANCHES: "master"
