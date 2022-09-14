@@ -1,4 +1,3 @@
 # test_auto_merge
 
-
-B4
+Test update B5
