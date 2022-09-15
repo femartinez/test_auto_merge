@@ -31,7 +31,7 @@ jobs:
         name: automerge
         uses: "pascalgn/automerge-action@v0.15.3"
         env:
-          GITHUB_TOKEN: "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"
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_LABELS: "QA approved,queue,deploy"
           MERGE_REMOVE_LABELS: ""
           MERGE_METHOD: "squash"
