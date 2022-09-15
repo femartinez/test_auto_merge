@@ -1,3 +1,5 @@
 # test_auto_merge
 
-Third commit
+Test push on master
+
+Another Push
