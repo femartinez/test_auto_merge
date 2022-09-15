@@ -1,4 +1,4 @@
 # test_auto_merge
 
 
-Test Merge B1
+Test Merge B2
