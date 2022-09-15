@@ -1,5 +1,3 @@
 # test_auto_merge
 
-Test push on master
-
-Another Push
+Try update on PR Creation
