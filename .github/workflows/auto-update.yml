@@ -6,6 +6,8 @@ on:
   pull_request:
     branches:
       - 'master'
+    types:
+      - labeled
 jobs:
   autoupdate:
     name: autoupdate
