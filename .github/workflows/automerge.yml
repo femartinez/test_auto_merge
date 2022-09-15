@@ -3,10 +3,10 @@ name: automerge
 on:
   push:
     branches:
-      - 'master'
+      - 'feature_branch'
   pull_request:
     branches:
-      - 'master'
+      - 'feature_branch'
     types:
       - labeled
       - ready_for_review
@@ -25,9 +25,9 @@ jobs:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_LABELS: "QA approved,queue,deploy"
           MERGE_METHOD: "squash"
-          MERGE_COMMIT_MESSAGE: "Auto-merge merge PR {pullRequest.number} into master"
+          MERGE_COMMIT_MESSAGE: "Auto-merge merge PR {pullRequest.number} into feature_branch"
           MERGE_FORKS: "false"
-          MERGE_RETRIES: "6"
+          MERGE_RETRIES: "3"
           MERGE_RETRY_SLEEP: "10000"
           MERGE_REQUIRED_APPROVALS: "0"
-          BASE_BRANCHES: "master"
+          BASE_BRANCHES: "feature_branch"
