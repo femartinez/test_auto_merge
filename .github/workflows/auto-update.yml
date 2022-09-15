@@ -17,7 +17,7 @@ jobs:
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
           PR_FILTER: "labelled"
-          PR_LABELS: "QA approved,queue"
+          PR_LABELS: "queue"
           EXCLUDED_LABELS: "deploy"
           RETRY_COUNT: "5"
           RETRY_SLEEP: "300"
