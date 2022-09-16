@@ -1,6 +1,4 @@
-name: automerge
-
-ame: Merge Bot
+name: Merge Bot
 
 on:
   pull_request:
