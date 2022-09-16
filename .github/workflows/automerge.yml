@@ -34,4 +34,3 @@ jobs:
         checks_enabled: true
         method: squash
         delete_source_branch: false
-
