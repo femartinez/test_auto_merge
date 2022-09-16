@@ -27,7 +27,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         test: false
         reviewers: false
-        labels: QA approved, queue, deploy
+        labels: deploy
         blocking_labels: do not merge
         checks_enabled: true
         method: squash
