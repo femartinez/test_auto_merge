@@ -27,4 +27,4 @@ jobs:
           do-not-merge-labels: not-ready
           required-labels: deploy
           pull-request: ${{ github.event.inputs.pull-request }}
-          dry-run: true
+          dry-run: false
