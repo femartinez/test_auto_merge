@@ -1,32 +1,30 @@
-name: Merge Bot
+name: Automerge
 
 on:
-  pull_request:
+  # Try enabling auto-merge for a pull request when a draft is marked as “ready for review”, when
+  # a required label is applied or when a “do not merge” label is removed, or when a pull request
+  # is updated in any way (opened, synchronized, reopened, edited).
+  pull_request_target:
+    branches:
+      - 'feature_branch'
     types:
+      - opened
+      - synchronized
+      - reopened
+      - edited
       - labeled
-      - ready_for_review
-      - review_request_removed
-      - review_requested
-      - synchronize
       - unlabeled
-  pull_request_review:
-    types:
-      - dismissed
-      - submitted
+      - ready_for_review
 
 jobs:
-  merge:
+  automerge:
     runs-on: ubuntu-latest
-    name: Merge
     steps:
-    - name: Integration check
-      uses: squalrus/merge-bot@v0.1.0
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        test: false
-        reviewers: false
-        labels: deploy
-        blocking_labels: do not merge
-        checks_enabled: true
-        method: squash
-        delete_source_branch: false
+      - uses: reitermarkus/automerge@v2
+        with:
+          token: '${{ secrets.GITHUB_TOKEN }}'
+          merge-method: squash
+          do-not-merge-labels: not-ready
+          required-labels: deploy
+          pull-request: ${{ github.event.inputs.pull-request }}
+          dry-run: false
