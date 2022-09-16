@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: reitermarkus/automerge@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: '${{ secrets.GITHUB_TOKEN }}'
           merge-method: squash
           do-not-merge-labels: not-ready
           required-labels: deploy
