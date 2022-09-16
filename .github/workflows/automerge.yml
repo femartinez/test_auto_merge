@@ -28,7 +28,7 @@ jobs:
         test: true
         reviewers: false
         labels: QA approved, queue, deploy
-        blocking_labels: not ready
+        blocking_labels: 'do not merge'
         checks_enabled: true
         method: squash
         delete_source_branch: false
