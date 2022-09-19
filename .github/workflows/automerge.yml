@@ -3,7 +3,7 @@ name: Automerge
 on:
   pull_request_target:
     branches:
-      - 'feature_branch'
+      - 'feature-branch/replace-mergify'
     types:
       - opened
       - reopened

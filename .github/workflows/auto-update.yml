@@ -2,10 +2,10 @@ name: Autoupdate
 on:
   push:
     branches:
-      - 'feature_branch'
+      - 'feature-branch/replace-mergify'
   pull_request:
     branches:
-      - 'feature_branch'
+      - 'feature-branch/replace-mergify'
     types:
       - labeled
 jobs:
