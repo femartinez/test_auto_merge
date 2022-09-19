@@ -1,0 +1,25 @@
+name: Automerge
+
+on:
+  pull_request_target:
+    branches:
+      - 'feature-branch/replace-mergify'
+    types:
+      - opened
+      - reopened
+      - edited
+      - labeled
+      - unlabeled
+
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: reitermarkus/automerge@v2
+        with:
+          token: '${{ secrets.GITHUB_TOKEN }}'
+          merge-method: squash
+          do-not-merge-labels: not-ready
+          required-labels: deploy
+          pull-request: ${{ github.event.inputs.pull-request }}
+          dry-run: false
