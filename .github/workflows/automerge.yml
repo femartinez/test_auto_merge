@@ -1,14 +1,13 @@
 name: automerge
 
 on:
-  push:
-    branches:
-      - 'master'
   pull_request:
     branches:
-      - 'master'
+      - 'feature-branch/automerge-all-in-one'
     types:
       - labeled
+      - unlabeled
+      - synchronize
       - ready_for_review
   check_suite:
     types:
@@ -23,11 +22,13 @@ jobs:
         uses: "pascalgn/automerge-action@v0.15.3"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          MERGE_LABELS: "QA approved,queue,deploy"
+          MERGE_LABELS: "QA approved,queue,deploy,!on hold"
           MERGE_METHOD: "squash"
-          MERGE_COMMIT_MESSAGE: "Auto-merge merge PR {pullRequest.number} into master"
+          MERGE_COMMIT_MESSAGE: "Auto-merge action merge PR {pullRequest.number} into base branch"
           MERGE_FORKS: "false"
           MERGE_RETRIES: "6"
           MERGE_RETRY_SLEEP: "10000"
           MERGE_REQUIRED_APPROVALS: "0"
-          BASE_BRANCHES: "master"
+          BASE_BRANCHES: "feature-branch/automerge-all-in-one"
+          UPDATE_LABELS: "QA approved,queue"
+          UPDATE_METHOD: "merge"
