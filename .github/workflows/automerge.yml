@@ -16,7 +16,7 @@ on:
 jobs:
   automerge:
     if: contains(github.event.pull_request.labels.*.name, 'QA approved')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - id: automerge
         name: automerge
