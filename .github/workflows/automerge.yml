@@ -33,3 +33,6 @@ jobs:
           BASE_BRANCHES: "feature-branch/automerge-all-in-one"
           UPDATE_LABELS: "QA approved,queue,!on hold"
           UPDATE_METHOD: "merge"
+      - name: Not merge
+      if: "! contains(github.event.pull_request.labels.*.name, 'QA approved')"
+      run: echo This event is a pull request that had an assignee removed.
