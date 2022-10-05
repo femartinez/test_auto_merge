@@ -25,7 +25,7 @@ jobs:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_LABELS: "QA approved,queue,deploy,!on hold"
           MERGE_METHOD: "squash"
-          MERGE_COMMIT_MESSAGE: "Auto-merge action merge PR (#{pullRequest.number}) {pull-request-title} into staging"
+          MERGE_COMMIT_MESSAGE: "Auto-merge action merge PR (#{pullRequest.number}) {pullRequest.title} into staging"
           MERGE_FORKS: "false"
           MERGE_RETRIES: "6"
           MERGE_RETRY_SLEEP: "10000"
